@@ -34,6 +34,12 @@ pipeline {
                 bat 'mvn clean install'
                   }
             }
+		stage('Docker Diagnostic') {
+    steps {
+        bat 'docker info'
+    }
+}
+
 		stage('Check Docker') {
     steps {
         bat 'docker --version'
