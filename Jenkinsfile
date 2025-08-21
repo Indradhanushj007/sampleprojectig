@@ -1,11 +1,6 @@
 pipeline {
     agent any
 
-	tools{
-		docker 'docker'
-	}
-  	
-
 	
     stages {
             stage('Compile and Clean') { 
@@ -39,6 +34,12 @@ pipeline {
                 bat 'mvn clean install'
                   }
             }
+		stage('Check Docker') {
+    steps {
+        bat 'docker --version'
+    }
+}
+
 stage('docker test') { 
 	
 	    steps {
