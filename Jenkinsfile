@@ -45,6 +45,12 @@ pipeline {
         bat 'docker --version'
     }
 }
+		stage('Network Check') {
+    steps {
+        bat 'curl https://registry-1.docker.io/v2/'
+    }
+}
+
 
 stage('docker test') { 
 	
