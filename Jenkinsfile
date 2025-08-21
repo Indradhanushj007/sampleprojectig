@@ -66,7 +66,7 @@ stage('docker test') {
         stage('Docker Tag'){
             steps {
 		    
-          	      bat 'docker tag sampleproject  aruna708/sampleproject:latest'
+          	      bat 'docker tag sampleproject  idjdocks/sampleproject:latest'
             }                
         }
         stage('Docker Push'){
@@ -78,7 +78,7 @@ stage('docker test') {
          //               docker push aruna708/sampleproject:latest
          //          '''
           //      }
-		   bat 'docker push aruna708/sampleproject'
+		   bat 'docker push idjdocks/sampleproject'
                
             }
         }
