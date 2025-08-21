@@ -60,10 +60,10 @@ stage('docker test') {
 }
 		stage('Docker Login') {
     steps {
-        withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'admin', passwordVariable: 'a0b486741aea4c6f90f53f1bc33a17d8
-')]) {
-            bat 'echo %DOCKER_PASS% | docker login -u %DOCKER_USER% --password-stdin'
-        }
+			withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+    bat 'echo %DOCKER_PASS% | docker login -u %DOCKER_USER% --password-stdin'
+}
+
     }
 }
 
