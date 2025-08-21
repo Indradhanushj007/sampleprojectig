@@ -58,6 +58,15 @@ stage('docker test') {
         bat 'docker ps'
     }
 }
+		stage('Docker Login') {
+    steps {
+        withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'admin', passwordVariable: 'a0b486741aea4c6f90f53f1bc33a17d8
+')]) {
+            bat 'echo %DOCKER_PASS% | docker login -u %DOCKER_USER% --password-stdin'
+        }
+    }
+}
+
         stage('Build Docker image'){
            steps {
 		
