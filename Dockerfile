@@ -1,4 +1,4 @@
-FROM openjdk:17
+FROM eclipse-temurin:17-jdk
 #FROM adoptopenjdk/openjdk11:alpine-jre
 #RUN addgroup -S spring && adduser -S spring -G spring
 #USER spring:spring
