@@ -1,6 +1,12 @@
 pipeline {
     agent any
 
+    
+    tools {
+        // Tells Jenkins to use Maven installed in your custom Docker image
+        maven 'Maven'  
+    }
+
     stages {
         stage('Checkout Code') {
             steps {
